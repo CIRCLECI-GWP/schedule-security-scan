@@ -8,8 +8,7 @@ jobs:
       - image: cimg/node:18.18.0-browsers
     steps:
       - browser-tools/install-chrome
-      - browser-tools/install-chromedriver      
-    steps:
+      - browser-tools/install-chromedriver
       - checkout
       - run:
           name: Update NPM
