@@ -28,9 +28,4 @@ jobs:
           background: true
       - run:
           name: Run tests
-          command: |
-            which chrome
-            which chromium
-      - run:
-          name: Run tests
           command: npm run test
