@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.4.6
 jobs:
   build:
     working_directory: ~/repo
@@ -7,12 +9,15 @@ jobs:
         environment:
           NODE_ENV: development
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
       - run:
           name: Install Chromium
           command: |
             wget http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_117.0.5938.132~linuxmint1+victoria_amd64.deb
             sudo apt install ./chromium_117.0.5938.132~linuxmint1+victoria_amd64.deb
+            whereis chromium
       - run:
           name: Update NPM
           command: "sudo npm install -g npm"
@@ -25,6 +30,11 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
+      - run:
+          command: |
+            google-chrome --version
+            chromedriver --version
+          name: Check install
       - run:
           name: Run the application
           command: node server.js
