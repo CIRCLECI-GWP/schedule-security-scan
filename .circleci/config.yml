@@ -9,6 +9,8 @@ jobs:
         environment:
           NODE_ENV: development
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
       - run:
           name: Install Chromium
