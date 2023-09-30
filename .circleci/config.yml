@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Install Chromium
           command: |
-            wget https://packages.linuxmint.com/pool/upstream/c/chromium/chromium_117.0.5938.132%7elinuxmint1%2bvictoria_amd64.deb
+            wget http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_117.0.5938.132~linuxmint1+victoria_amd64.deb
             sudo apt install ./chromium_117.0.5938.132~linuxmint1+victoria_amd64.deb
             whereis chromium
       - run:
