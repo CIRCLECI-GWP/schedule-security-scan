@@ -21,7 +21,7 @@ test("Check Non-threat Site Entry", async () => {
     await page.click("#submitButton");
 
     let messageContainer = await page.$("#infoDisplay");
-    await page.waitForTimeout(4000);
+    await page.waitForTimeout(5000);
     let value = await messageContainer.evaluate((el) => el.textContent);
 
     console.log(value);
@@ -46,7 +46,7 @@ test("Check Malicious Site Entry", async () => {
     await page.click("#submitButton");
 
     let messageContainer = await page.$("#infoDisplay");
-    await page.waitForTimeout(4000);
+    await page.waitForTimeout(5000);
 
     let value = await messageContainer.evaluate((el) => el.textContent);
 
