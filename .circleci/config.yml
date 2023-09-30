@@ -23,6 +23,11 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          command: |
+            google-chrome --version
+            chromedriver --version
+          name: Check install
+      - run:
           name: Run the application
           command: node server.js
           background: true
