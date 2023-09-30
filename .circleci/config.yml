@@ -15,7 +15,6 @@ jobs:
       - run:
           name: Install Chromium
           command: |
-          sudo apt-cache policy chromium
           wget http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_96.0.4664.45%7elinuxmint1%2buma_amd64.deb
           sudo apt install ./chromium_96.0.4664.45~linuxmint1+uma_amd64.deb
           whereis chromium
