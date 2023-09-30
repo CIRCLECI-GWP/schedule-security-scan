@@ -6,8 +6,6 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: cimg/node:18.18.0-browsers
-        environment:
-          NODE_ENV: development
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
