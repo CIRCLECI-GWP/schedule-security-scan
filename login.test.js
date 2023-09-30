@@ -9,7 +9,7 @@ const expected_threat_site_message = "Threat Detected. Do not Process";
 
 test("Check Non-threat Site Entry", async () => {
   const browser = await puppeteer.launch({
-    executablePath: "/usr/bin/chromium-browser",
+    executablePath: "/usr/local/bin/chromedriver",
   });
   try {
     const page = await browser.newPage();
@@ -34,7 +34,7 @@ test("Check Non-threat Site Entry", async () => {
 
 test("Check Malicious Site Entry", async () => {
   const browser = await puppeteer.launch({
-    executablePath: "/usr/bin/chromium-browser",
+    executablePath: "/usr/local/bin/chromedriver",
   });
   try {
     const page = await browser.newPage();
